@@ -1,0 +1,103 @@
+1. https://github.com/ashutosh0188/TestRepo.git folderName -- To clone, folderName is the dir name and optional
+2. git status --To check status of unversioned and added files
+3. git commit -m "message"
+4. git push 
+	git push -u origin master --u flag adds it as remote tracking branch and origin means centran repository (or upstream)
+5. git branch -- to know current working branch and list all available branches locally
+6. git pull --to get latest upstream changes into your local branch
+7. git checkout -b new-feature -- to create a feature branch
+	git checkout -b newBranchName --to create a branch
+	git checkout -b newBranchName tagName --to create a branch with a tag v1.0, v2.0 etc
+	git checkout -b <New Branch Name> <TAG Name>
+8. git push -u origin <New branch name> --u flag adds it as remote tracking branch and origin means centran repository (or upstream)
+9. To create branch from master
+	1. check on which branch are you currently -- git branch
+	2. if not then switch to master branch -- git checkout master
+	3. pull all upstream/origin/remote branch changes -- git pull
+	4. git checkout -b <New Branch Name> <TAG Name> -- <TAG Name> is optional
+	5. A new branch will be created from master on your local
+	6. create some files, add it using git add filename and then commit it using git commit -m "any message"
+	7. git push -u origin <New Branch Name>
+	To create a branch B from another branch A
+	1. follow the same steps except switch to branch A before creating branch B from branch A
+10. Merge a branch to another branch
+	1. git branch -- check first and make sure you are on desired branch
+	2. chekout the branch in which you want to merge your new changes i.e. activate destination branch from current branch
+	2. pull all remote changes into your current branch
+	3. git merge new-branch --to merge the new feature into the master branch
+	4. git push -u origin currentBranchName
+11. create a scenario of conflicts
+	1. add some changes to some file in master branch
+	2. checkout your master branch
+	3. Add some changes and commit and push
+	4. If there are some changes already there in same file in which you have done changes it will show conflicts issue.
+	5. the file should be same in which we are doing changes
+	how to resolve???
+	1. git stash
+	2. git pull
+	3. git stash pop -- this will merge the file with origin content but in a conflict state
+	4. open file and resolve conflicts
+	5. git commit
+	6. git push
+12. create a scenario of branch merging conflicts
+	1. add some changes to your any feature branch
+	2. add some changes to your master branch
+	3. merge feature branch into master branch
+	4. conflict will be created
+	5. resolve manually by going into the file
+13. git stash commands
+	1. git stash -- save changes in WIP mode on current branch
+	2. git stash save "stash name" -- save changes with a name 
+	3. git stash list -- list down all stash
+	4. git stash pop -- removed latesh stash and apply changes into file
+	5. git stash apply -- keeps changes and apply changes into file
+	6. git stash drop stash@{1} -- clear particular stash
+	7. git stash clear -- 	clear all stash
+	8. git stash -p -- p is partial means single file stash.. it will iterate and ask for files to be stash
+14. git branch -a --show all local and remote branches and -r show all remote branches
+15. git fetch or git fetch -a --fetches all branch from remote
+16. branch deletion
+	1. git branch -d [name_of_your_new_branch] --Delete a branch on your local filesystem  or
+	2. git branch -D [name_of_your_new_branch] --To force the deletion of local branch on your filesystem
+	3. git push origin :[name_of_your_new_branch] --Delete the branch on remote
+17. 
+	1. git pull -a update current working branch
+    2. git pull -r update all branch     
+
+
+Quick scenario about what we learn---
+Question: I have a local branch A that doesn't exist yet in remote repo. And I have remote branch B in remote repo. How do I merge my local changes into the remote branch?
+Answer: 
+	1. switch to your local branch B
+	2. pull all remote changes of remote branch B
+	3. merge loacl branch A into local branch B
+	4. push changes to remote, if no conflicts are there
+	5. otherwise resolve conflicts and repeat step 4
+Question: You have 2006 master branch on remote. You created a new develop branch from master branch on remote. 
+Then again you and your colleagues created 2 branches B1, B2 from develop branch on remote. You all fetch remote branches and start working.
+Your colleague did some changes to loacal B1 branch and merged into remote develop branch. Now it's your turn to merge your changes from your local B2 to 
+remote develop branch.. How to achive this scenario?
+Answer: 
+	1. Switch to your develop branch
+	2. Since your develop branch is behind from remote develop branch. So rebase it.
+	3. git pull origin develop
+	4. git merge B2
+
+Points to be remember/Good practices
+1.  In Git, a branch is really just a tag. It is a label that we can use to reference a particular string of commits.
+2.  git merge merges the specified branch into the currently active branch
+3.  Always do git pull once a while before start changing if many developers are working on same branch. And same for merge.
+4. the stash is local to your Git repository; stashes are not transferred to the server when you push
+5. Each commit has a SHA1 hash
+6. git --help
+7. git merge branchname will take new commits from the branch(branchname), and add the commits to the current branch. It can automatically add a "Merge" commit on top.
+8. git rebase b	
+ranchname takes new commits from the branch(branchname) and insert those commits  "under" your changes. 
+9. git pull --rebase and git fetch are similar; git rebase origin/master.
+10. git pull is similar to git fetch; git merge origin/master.
+
+Some useful links
+https://www.atlassian.com/git/tutorials/saving-changes/git-stash
+https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
+https://stackabuse.com/git-merge-branch-into-master/
+https://intellipaat.com/community/15675/how-to-merge-remote-master-to-local-branch
