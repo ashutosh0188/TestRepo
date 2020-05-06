@@ -2,3 +2,4 @@ Hi This is first command.
 This is second commit message
 Lets add a comment from another way or direct online editing.
 Lets create a scenario where someone else has added a code and we have not yet pull the code and see what happens??? in this case we have commited to this file a comment from online
+This is third commit message inside testsample1-feature branch
