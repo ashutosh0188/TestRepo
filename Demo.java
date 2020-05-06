@@ -4,5 +4,10 @@ public class Demo
   {
     System.out.println("Nice to have this class");
     System.out.println("Nice to have this class with online edit");
+    printSum(5,8);
+  }
+  public static void printSum(int a, int b)
+  {
+    System.out.println(a+b);
   }
 }
