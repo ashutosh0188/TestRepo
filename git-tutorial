@@ -62,7 +62,27 @@
 	3. git push origin :[name_of_your_new_branch] --Delete the branch on remote
 17. 
 	1. git pull -a update current working branch
-    2. git pull -r update all branch     
+    2. git pull -r update all branch    
+		
+18. 	git diff --will show all the changes from last version
+		git diff fileName --will show all the changes for that particular fileName
+		
+19.	git reset --hard --This will reset your working area to the HEAD ie. last commited version and It means all your changes will be lost of all files. For a signle file use git checkout --fileName
+		git reset --soft HEAD~1 --move the mistakenly committed files back to the staging area.
+		git checkout -- filename --This act as a revert of SVN. That means If you have uncommitted change in fileName. Then your changes of fileName will be set back to HEAD.
+		git reset fileName --removes added files from index before commiting
+		git reset --removes all added files from index before commiting
+
+20. 	git log --to display all the commit_id, the first one is the last commit_id, copy it
+		git show commit_id --name-only [to display all the files committed in the specified commit_id.]
+		
+21. Configurations
+		for a repository sepecific settings [in case for global seetings add wildcard --global after config keyword]
+		git config --list or cat .git/config --to see repository wise configs // 
+		git config --global --list --to see global config
+		git config user.name "Ashu"
+		git config user.password "Ashu"
+		git config user.email "Ashu@gmail.com"
 
 
 Quick scenario about what we learn---
@@ -95,9 +115,12 @@ Points to be remember/Good practices
 ranchname takes new commits from the branch(branchname) and insert those commits  "under" your changes. 
 9. git pull --rebase and git fetch are similar; git rebase origin/master.
 10. git pull is similar to git fetch; git merge origin/master.
+11. HEAD revision -- is the last commited version
 
 Some useful links
 https://www.atlassian.com/git/tutorials/saving-changes/git-stash
 https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
 https://stackabuse.com/git-merge-branch-into-master/
 https://intellipaat.com/community/15675/how-to-merge-remote-master-to-local-branch
+https://support.beanstalkapp.com/article/1004-how-do-i-undo-things-in-git
+https://medium.com/@lucasmaurer/git-gud-the-working-tree-staging-area-and-local-repo-a1f0f4822018
