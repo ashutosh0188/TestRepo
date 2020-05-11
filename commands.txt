@@ -8,3 +8,5 @@ This is what to merge
 This will create a conflict feature/ashu
 This will create a conflict 
 Lets use stash feature/ashu
+This will create a conflict to show stash
+Stashed changes
