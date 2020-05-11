@@ -4,3 +4,5 @@ This is another commit
 This is what to merge 
 This is now create issue?? Since we added some changes in same file in the feature/ashu branch
 
+This is what to merge
+This will create a conflict feature/ashu
