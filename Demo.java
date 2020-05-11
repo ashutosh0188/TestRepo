@@ -6,6 +6,7 @@ public class Demo
     System.out.println("Nice to have this class with online edit");
     printSum(5,8);
     printSum(10,-20);
+    printSum(-6,-7);
   }
   public static void printSum(int a, int b)
   {
