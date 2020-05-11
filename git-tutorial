@@ -1,6 +1,6 @@
 1. https://github.com/ashutosh0188/TestRepo.git folderName -- To clone, folderName is the dir name and optional
 2. git status --To check status of unversioned and added files
-3. git commit -m "message"
+3. git commit -m "message" //git commit --amend
 4. git push 
 	git push -u origin master --u flag adds it as remote tracking branch and origin means centran repository (or upstream)
 5. git branch -- to know current working branch and list all available branches locally
@@ -26,7 +26,7 @@
 	2. pull all remote changes into your current branch
 	3. git merge new-branch --to merge the new feature into the master branch
 	4. git push -u origin currentBranchName
-11. create a scenario of conflicts
+11. create a scenario of conflicts [in same branch]
 	1. add some changes to some file in master branch
 	2. checkout your master branch
 	3. Add some changes and commit and push
@@ -39,12 +39,13 @@
 	4. open file and resolve conflicts
 	5. git commit
 	6. git push
-12. create a scenario of branch merging conflicts
+12. create a scenario of branch merging conflicts 
 	1. add some changes to your any feature branch
 	2. add some changes to your master branch
 	3. merge feature branch into master branch
-	4. conflict will be created
+	4. conflict will be created only (if you have pushed master branch changes only otherwise it will be aborted)
 	5. resolve manually by going into the file
+	[But this is not a good way. It will create an extra history. So it's better to stash your changes first.]
 13. git stash commands
 	1. git stash -- save changes in WIP mode on current branch
 	2. git stash save "stash name" -- save changes with a name 
@@ -57,9 +58,9 @@
 14. git branch -a --show all local and remote branches and -r show all remote branches
 15. git fetch or git fetch -a --fetches all branch from remote
 16. branch deletion
-	1. git branch -d [name_of_your_new_branch] --Delete a branch on your local filesystem  or
+	1. git branch -d [name_of_your_new_branch] --Delete a branch on your local filesystem. It will delete only if it has been pushed and merged  or
 	2. git branch -D [name_of_your_new_branch] --To force the deletion of local branch on your filesystem
-	3. git push origin :[name_of_your_new_branch] --Delete the branch on remote
+	3. git push origin --delete:[name_of_your_new_branch] --Delete the branch on remote
 17. 
 	1. git pull -a update current working branch
     2. git pull -r update all branch    
