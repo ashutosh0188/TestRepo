@@ -1,3 +1,4 @@
 This is a commands file created initially in testsample1-feature branch
 This is added by some other developer
 This is another commit
+This is what to merge 
